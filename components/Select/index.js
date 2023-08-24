@@ -8,9 +8,11 @@ import {
     SelectHeader,
     ErrorMesagge,
     HelpText,
+    Label,
 } from "./styledSelect";
 
 const Select = ({
+    name = '',
     label = '',
     placeholder = 'Selecciona una opción',
     error = '',
@@ -24,7 +26,7 @@ const Select = ({
     const [selectedOption, setSelectedOption] = useState('');
 
     const handleOption = (option) => {
-        onChange({target: {label: option.label, value: option.value}});
+        onChange({target: {name, value: option.value}});
         setIsOpen(false);
     };
 
@@ -38,8 +40,8 @@ const Select = ({
 
     return (
         <SelectContainer>
-            <span>{label}</span>
-            <SelectGroup disabled={disabled}>
+           <Label htmlFor={name}>{label}</Label>
+            <SelectGroup disabled={disabled} $isOpen={isOpen}>
                 <SelectHeader onClick={() => !disabled && setIsOpen(!isOpen)}>
                     <span>{value ? selectedOption : placeholder}</span>
                     <Icon $isOpen={isOpen} />

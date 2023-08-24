@@ -7,11 +7,17 @@ const SelectContainer = styled.div`
     margin: 18px 0px;
 `;
 
+const Label = styled.label`
+    cursor: pointer;
+`;
+
 const SelectGroup = styled.div`
     border: 1px solid #9966FC;
     background-color: ${(props) => props.disabled ? '#e6e6e6' : 'white'};
     padding: 8px 5px;
     border-radius: 5px;
+    margin-top: 5px;
+    box-shadow: ${({ $isOpen }) => ($isOpen ? '0px 0px 3px #9966FC' : 'none')};
 `;
 
 const SelectHeader = styled.div`
@@ -80,6 +86,7 @@ const HelpText = styled.span`
 
 export {
     SelectContainer,
+    Label,
     SelectGroup,
     SelectHeader,
     Icon,

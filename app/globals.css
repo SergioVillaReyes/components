@@ -5,11 +5,22 @@ body {
   margin: auto;
 }
 
-button {
+.btn-primary {
   width: 100%;
   margin-top: 15px;
   padding: 10px 15px;
   background-color: #7A43E5;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #66B4F7;
   border: none;
   border-radius: 25px;
   color: white;
